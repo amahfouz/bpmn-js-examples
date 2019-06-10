@@ -10,7 +10,21 @@ var modeler = new BpmnModeler({
   container: '#js-canvas'
 });
 
+var eventBus = modeler.get('eventBus');
+var events = [
+  'element.click'
+];
+
+events.forEach(function(event) {
+  eventBus.on(event, function(e) {
+    // e.element = the model element
+    // e.gfx = the graphical element
+    console.log(e.element);
+  });
+});
+
 function createNewDiagram() {
+  console.log('Creating diagram.');
   openDiagram(diagramXML);
 }
 
