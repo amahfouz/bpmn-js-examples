@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "bpmn-js": "^3.4.1",
+    "camunda-bpmn-moddle": "^3.2.0",
     "diagram-js": "^3.0.1",
     "jquery": "^3.3.1"
   }

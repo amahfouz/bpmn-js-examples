@@ -4,11 +4,23 @@ import BpmnModeler from 'bpmn-js/lib/Modeler';
 
 import diagramXML from '../resources/newDiagram.bpmn';
 
+import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
+
+import webaloModdleDescriptor from '../resources/webalo-moddle.json';
+
 var container = $('#js-drop-zone');
 
 var modeler = new BpmnModeler({
-  container: '#js-canvas'
+  container: '#js-canvas',
+  moddleExtensions: {
+    camunda: camundaModdleDescriptor,
+    webalo: webaloModdleDescriptor
+  }
 });
+
+console.log(modeler);
+
+// var moddle = modeler._moddle;
 
 var eventBus = modeler.get('eventBus');
 var events = [
@@ -17,9 +29,8 @@ var events = [
 
 events.forEach(function(event) {
   eventBus.on(event, function(e) {
-    // e.element = the model element
-    // e.gfx = the graphical element
-    console.log(e.element);
+    console.log(e.element.type);
+    $('#webalo-task-id').val(e.element.type);
   });
 });
 
