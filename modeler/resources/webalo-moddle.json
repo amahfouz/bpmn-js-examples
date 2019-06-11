@@ -1,0 +1,13 @@
+{
+  "name": "webalo-bpmn-moddle",
+  "uri": "http://webalo.com/bpmn-io/moddle",
+  "prefix": "webalo",
+  "types": [
+    {
+      "name": "WebaloTaskRef",
+      "properties": [
+        { "name": "id", "type": "String", "isAttr": true }
+      ]
+    }
+  ]
+}
