@@ -29,8 +29,13 @@ var events = [
 
 events.forEach(function(event) {
   eventBus.on(event, function(e) {
-    console.log(e.element.type);
-    $('#webalo-task-id').val(e.element.type);
+    console.log(e.element);
+    console.log(e.element.businessObject.extensionElements.values[0]);
+    e.element.businessObject.extensionElements.values[0].value = $('#webalo-task-id').val();
+    modeler._moddle.toXML(modeler._definitions, function(err, result) {
+      console.log(result);
+      console.log(err);
+    });
   });
 });
 

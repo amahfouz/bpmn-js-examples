@@ -4,10 +4,22 @@
   "prefix": "webalo",
   "types": [
     {
-      "name": "WebaloTaskRef",
-      "properties": [
-        { "name": "id", "type": "String", "isAttr": true }
-      ]
-    }
+        "name": "task-id",
+        "superClass": [
+          "Element"
+        ],
+        "properties": [
+          {
+            "name": "id",
+            "type": "String",
+            "isAttr": true
+          },
+          {
+            "name": "value",
+            "type": "String",
+            "isAttr": true
+          }
+        ]
+      }    
   ]
 }
